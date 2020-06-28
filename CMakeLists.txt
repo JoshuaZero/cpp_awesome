@@ -9,4 +9,10 @@
 *
 ================================================================*/
 
+cmake_minimum_required(VERSION 2.8)
+
+project(cpp_awesome c cxx)
+
+#set CMAKE_CXX_FLAGS()
+
 
