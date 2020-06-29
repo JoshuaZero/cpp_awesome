@@ -35,8 +35,8 @@ link_directories(${INCLUDE_ROOT})
 
 #add_library(cpp_lib ${INCLUDE_ROOT})
 
-add_executable(cpp_demo ${SRC_ROOT})
+add_executable(cpp_demo main.cpp ${SRC_ROOT})
 
-#target_link_libraries(cpp_demo )
+#target_link_libraries(cpp_demo pthread)
 
 
