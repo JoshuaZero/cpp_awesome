@@ -11,3 +11,20 @@
 
 #pragma once
 
+class baseobj{
+public:
+  baseobj()=default;
+  //explicit baseobj();
+  virtual ~baseobj();
+
+  baseobj(const baseobj& lsh);
+  baseobj(baseobj&& rsh);
+  baseobj& operator=(const baseobj& lsh);
+  baseobj& operator=(baseobj&& rsh);
+
+
+
+private:
+
+
+};
