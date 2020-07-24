@@ -14,6 +14,9 @@ set -ex
 
 path=`pwd`
 cd ${path}/build
+
+
+
 cmake ..  
 
 
