@@ -12,7 +12,7 @@
 #include "singleton.h"
 
 
-CSingleTon* getInstance(){
+CSingleTon* CSingleTon::getInstance(){
   if (m_Instance == NULL){
      m_Instance = new CSingleTon();
   }
@@ -20,7 +20,19 @@ CSingleTon* getInstance(){
 }
 
 //需要规避拷贝和赋值
-CSingleTon& GetInstance(){
+CSingleTon& CSingleTon::GetInstance(){
   static CSingleTon l_inst;
   return l_inst;
+}
+
+
+CSingleTon* CSingleTon::getInstan(){
+  if(m_Instance == NULL){
+    lock();
+    if(m_Insatance == NULL){
+      m_Instance = New CSingleTon();
+    }
+    unlock();
+  }
+  return m_Instance;
 }
