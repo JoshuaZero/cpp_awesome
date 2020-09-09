@@ -14,7 +14,12 @@
 #include "apue.h"
 #include <fcntl.h>
 #include <sys/stat.h>
-
+#include <dirent.h>
+#include <limits.h>
+#include <sys/sysmacros.h>
+#ifdef SOLARIS
+ #include <sys/mkdev.h>
+#endif
 
 int file_access(int argc, char* argv[]);
 
@@ -25,3 +30,18 @@ int file_chmod(void);
 int file_link(void);
 
 int file_stat(int argc, char* argv[]);
+
+typedef int Myfunc(const char*, const struct stat*, int);
+
+static Myfunc myfunc;
+static int myftw(char*, Myfunc *);
+static int dopath(Myfunc *);
+static long nreg, ndir, nblk, nchr, nfifo, nslink, nsock, ntot;
+int file_traverse(int argc, char* argv[]);
+
+int file_chdir(void);
+
+int file_getcwd(void);
+
+int file_dev(int argc, char* argv[]);
+
