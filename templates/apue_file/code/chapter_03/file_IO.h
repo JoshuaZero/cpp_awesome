@@ -1,24 +1,20 @@
 /*================================================================
 *   Copyright (C) 2020 Sangfor Ltd. All rights reserved.
 *   
-*    FileName：unix_basic.h
+*    FileName：file_IO.h
 *      Author：joshua_zero@outlook.com
-*  CreateTime：2020年09月05日
+*  CreateTime：2020年09月07日
 * Describtion：--
 *
 ================================================================*/
 
 
-#pragma onc
+#pragma once
 
-int myls(int argc, char* argv[]);
+int is_seek(void);
 
-int mystdinout(void);
+int file_hole(void);
 
-int mystdinout_buffer(void);
+int file_copy(void);
 
-int processctrl(void);
-
-
-static void sig_int(int);
-int process_signal(void);
+int file_fcntl(int argc, char* argv[]);

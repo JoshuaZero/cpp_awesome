@@ -11,4 +11,11 @@
 #================================================================
 
 
-gcc unix_basic.c -o unix_basic -l apue
+gcc file_dir.c -o file_dir -l apue
+
+
+
+#
+#
+#
+#
